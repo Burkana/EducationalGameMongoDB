@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <title>CodeBusters - Level</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/css/stylelevel.css" />
+</head>
+<body>
+  <header class="text-center py-3">
+    <h1 id="levelTitle">C++ Level</h1>
+    <div id="coinBalanceWrapper" class="mt-2">
+      <p>Монети: <span class="coinBalance">0</span></p>
+    </div>
+  </header>
+
+  <main class="container py-4 d-flex justify-content-center align-items-center flex-wrap">
+    <div id="instructions" class="col-12 col-md-10 mb-3 p-3 border rounded"></div>
+    <div id="playground" class="col-12 col-md-10 p-3 border rounded shadow-sm"></div>
+  </main>
+
+  <footer class="footer fixed-bottom">
+    <div class="container text-center">
+      <p class="m-0">&copy; Направено от Камен и Георги най-добрите програмисти</p>
+    </div>
+  </footer>
+
+  <!-- ✅ Pass level number from backend to JS -->
+  <script>
+    window.currentLevelNumber = <%= level ? level.number : 1 %>;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/controllers/progress.js"></script>
+  <script src="/js/scriptmainlogin.js"></script>
+  <script src="/js/scriptlevel.js"></script>
+</body>
+</html>

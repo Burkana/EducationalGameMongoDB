@@ -15,48 +15,23 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ======================
-// Levels Instructions
+// LEVELS DATA
 // ======================
 const levels = [
-  {
-    number: 1,
-    title: 'C++ Ниво 1',
-    instructions: `
-      <h2>Мисия</h2>
-      <p>Довършете едноредовата инструкция <strong>cout&lt;&lt;</strong> между main() и return 0;
-      Тя трябва да изведе точно <strong>Hello, C++ World!</strong></p>
-    `,
-    code: `
-      <pre>#include &lt;iostream&gt;</pre>
-      <pre>using namespace std;</pre>
-      <pre>int main() {</pre>
-      <input type="text" id="codeInput" placeholder='cout<<"Hello, C++ World!";' autocomplete="off" />
-      <pre>return 0;</pre>
-      <pre>}</pre>
-    `,
-    pattern: /^\s*cout\s*<<\s*"Hello,\s*C\+\+\s*World!"\s*;\s*$/
-  },
-  {
-    number: 2,
-    title: 'C++ Ниво 2',
-    instructions: `
-      <h2>Мисия</h2>
-      <p>Изведете съобщението <strong>I love programming!</strong> с cout.</p>
-    `,
-    code: `
-      <pre>#include &lt;iostream&gt;</pre>
-      <pre>using namespace std;</pre>
-      <pre>int main() {</pre>
-      <input type="text" id="codeInput" placeholder='cout<<"I love programming!";' autocomplete="off" />
-      <pre>return 0;</pre>
-      <pre>}</pre>
-    `,
-    pattern: /^\s*cout\s*<<\s*"I love programming!"\s*;\s*$/
-  }
+  { number: 1, title: 'C++ Ниво 1' },
+  { number: 2, title: 'C++ Ниво 2' },
+  { number: 3, title: 'C++ Ниво 3' },
+  { number: 4, title: 'C++ Ниво 4' },
+  { number: 5, title: 'C++ Ниво 5' },
+  { number: 6, title: 'C++ Ниво 6' },
+  { number: 7, title: 'C++ Ниво 7' },
+  { number: 8, title: 'C++ Ниво 8' },
+  { number: 9, title: 'C++ Ниво 9' },
+  { number: 10, title: 'C++ Ниво 10' }
 ];
 
 // ======================
-// Routes
+// ROUTES
 // ======================
 
 // Homepage
@@ -84,29 +59,27 @@ app.post('/register', (req, res) => {
 app.post('/login', (req, res) => {
   const { email, passwords } = req.body;
   console.log('Login:', email, passwords);
-  res.redirect('/levels');
+  res.redirect('/main');
 });
 
-// Guest access
+// Main menu (shows levels)
 app.get('/main', (req, res) => {
   const isGuest = req.query.guest === 'true';
-  res.render('main', { guest: isGuest, levels });
+  res.render('main', { levels, guest: isGuest });
 });
 
-// Menu page with all levels
-app.get('/levels', (req, res) => {
-  res.render('menu', { levels });
-});
-
-// Individual level page
-app.get('/levels/:id', (req, res) => {
-  const id = parseInt(req.params.id, 10);
-  const level = levels.find(l => l.number === id);
-  if (!level) return res.status(404).send('Level not found');
-  res.render('levels', { level });
+// ✅ Dynamic level route (used by scriptlevel.js and level.ejs)
+app.get('/levels/:number', (req, res) => {
+  const levelNumber = parseInt(req.params.number);
+  const level = levels.find(l => l.number === levelNumber);
+  if (!level) return res.status(404).send('Невалидно ниво!');
+  res.render('level', { level });
 });
 
 // ======================
-// Start server
+// START SERVER
 // ======================
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
+ <!-- ✅ Pass level number from backend to JS -->
