@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
   // All level data lives here 👇
   const levels = [
     {
