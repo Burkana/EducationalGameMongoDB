@@ -29,7 +29,7 @@ const levels = [
 const levelContent = {
   1: {
     instructions: `
-        <h2>Мисия</h2>
+        <h3>Мисия</h3>
         <p>
           Довършете едноредовата инструкция <strong>cout<<</strong> между <strong>main()</strong> и <strong>return 0;</strong>.<br>
           Тя трябва да изведе точно <strong>Hello, C++ World!</strong> и да завършва с точка и запетая.<br>
@@ -82,7 +82,7 @@ const levelContent = {
   },
   2: {
       instructions: `
-        <h2>Мисия</h2>
+        <h3>Мисия</h3>
         <p>Добавете два реда C++ код между <strong>main()</strong> и <strong>return 0;</strong></p>
         <ol>
           <p><strong>1. cin >> name;</strong> за въвеждане на вход от потребителя.</p>
@@ -174,7 +174,7 @@ const levelContent = {
   },
   3: {
       instructions: `
-        <h2>Мисия</h2>
+        <h3>Мисия</h3>
     <p>Напишете програма, която въвежда две цели числа и извежда тяхната сума.</p>
     <ol>
       <p><strong>1. cin >> a;</strong> – за въвеждане на първото число</p>
@@ -208,8 +208,8 @@ const levelContent = {
     <div id="outputWindow"></div>
 
     <div id="levelButtons">
-      <button id="nextLevelBtn" style="display: none;">Следващо ниво</button>
-      <button id="prevLevelBtn" style="display: block;">Предишно ниво</button>
+      <button id="nextLevelBtn" class="btn btn-success" style="display: none;">Следващо ниво</button>
+      <button id="prevLevelBtn" class="btn btn-warning" style="display: block;">Предишно ниво</button>
         <a href="/main"><button id="menuBtn" class="btn btn-secondary">Меню</button></a>
     </div>
   `,
@@ -280,7 +280,7 @@ const levelContent = {
   },
   4: {
       instructions: `
-  <h2>Мисия</h2>
+  <h3>Мисия</h3>
   <p>
     Използвай <strong>while</strong> цикъл, за да отпечаташ числата от <strong>1 до 5</strong>.<br><br>
     Добави 4 реда между <b>int i = 1;</b> и <b>return 0;</b>
@@ -317,8 +317,8 @@ const levelContent = {
   <div id="outputWindow"></div>
 
   <div id="levelButtons">
-    <button id="nextLevelBtn" style="display: none;">Следващо ниво</button>
-    <button id="prevLevelBtn" style="display: block;">Предишно ниво</button>
+    <button id="nextLevelBtn" class="btn btn-success" style="display: none;">Следващо ниво</button>
+    <button id="prevLevelBtn" class="btn btn-warning" style="display: block;">Предишно ниво</button>
       <a href="/main"><button id="menuBtn" class="btn btn-secondary">Меню</button></a>
   </div>
 `,
@@ -391,7 +391,7 @@ const levelContent = {
   },
   5: {
       instructions: `
-  <h2>Мисия</h2>
+  <h3>Мисия</h3>
   <p>
     Сега ще добавим вход от потребителя!<br><br>
     <strong>1.</strong> Използвай <b>cin >> n;</b> за да въведеш число от потребителя.<br>
@@ -435,8 +435,8 @@ const levelContent = {
   <div id="outputWindow"></div>
 
   <div id="levelButtons">
-    <button id="nextLevelBtn" style="display: none;">Следващо ниво</button>
-    <button id="prevLevelBtn" style="display: block;">Предишно ниво</button>
+    <button id="nextLevelBtn" class="btn btn-success" style="display: none;">Следващо ниво</button>
+    <button id="prevLevelBtn" class="btn btn-warning" style="display: block;">Предишно ниво</button>
      <a href="/main"><button id="menuBtn" class="btn btn-secondary">Меню</button></a>
   </div>
 `,
