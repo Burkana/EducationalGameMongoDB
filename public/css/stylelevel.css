@@ -23,6 +23,9 @@ body {
   background:white;               
   color:white;                     
   transition: background .3s,color .3s;
+  min-height: 100vh;
+  padding-bottom: 70px;
+
 }
 
 h1 {

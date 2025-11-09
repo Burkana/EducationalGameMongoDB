@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   
-  // All level data lives here 👇
   const levels = [
     {
       number: 1,
@@ -13,14 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
           За да изведете текста в командата той трябва да е в кавички <strong>" "</strong> <br>
           и след тях да завършите с точка и запетая <strong>;</strong>
         </p>
-        <button id="hintBtn" class="btn btn-secondary">Подсказка (50 монети)</button>
+      
       `,
       code: `
         <div id="codeWrapper">
           <pre class="codeLine">#include &lt;iostream&gt;</pre>
           <pre class="codeLine">using namespace std;</pre>
           <pre class="codeLine">int main() {</pre>
-          <input type="text" id="codeInput" class="codeInput form-control my-2" placeholder='cout<<"Hello, C++ World!";' />
+          <input type="text" id="codeInput" class="codeInput form-control my-2" placeholder='Пишете тук...' />
           <pre class="codeLine">    return 0;</pre>
           <pre class="codeLine">}</pre>
         </div>
@@ -45,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p><strong>2. cout << "Hello, " << name << "!";</strong> за поздрав.</p>
           Трябва да изведе точно <strong>Hello, "въведеното от вас име"</strong>
         </ol>
-        <button id="hintBtn" class="btn btn-secondary">Подсказка (50 монети)</button>
+      
       `,
       code: `
         <div id="codeWrapper">
@@ -53,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <pre class="codeLine">using namespace std;</pre>
           <pre class="codeLine">int main() {</pre>
           <pre class="codeLine">    string name;</pre>
-          <input type="text" id="codeInput1" class="codeInput form-control my-2" placeholder='cin >> name;' />
-          <input type="text" id="codeInput2" class="codeInput form-control my-2" placeholder='cout << "Hello, " << name << "!";' />
+          <input type="text" id="codeInput1" class="codeInput form-control my-2" placeholder='Пишете тук...' />
+          <input type="text" id="codeInput2" class="codeInput form-control my-2" placeholder='Пишете тук...' />
           <pre class="codeLine">    return 0;</pre>
           <pre class="codeLine">}</pre>
         </div>
@@ -77,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  // ✅ Get current level from Express route (/levels/1, /levels/2, etc.)
+  // Взимане на нивата от Експрес
   const pathParts = window.location.pathname.split('/');
   const levelNum = parseInt(pathParts[pathParts.length - 1]);
   const level = levels.find(l => l.number === levelNum);
@@ -87,16 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // ✅ Render content
+  //Показване на елементите
   document.getElementById('levelTitle').innerText = level.title;
   document.getElementById('instructions').innerHTML = level.instructions;
   document.getElementById('playground').innerHTML = level.code;
 
-  // ✅ Attach logic for each level
+  // Логика към нивата за проверка
   if (level.number === 1) bindLevel1(level);
   if (level.number === 2) bindLevel2(level);
 
-  // === LEVEL 1 ===
+  // Ниво 1
   function bindLevel1(level) {
     const input = document.getElementById('codeInput');
     const runBtn = document.getElementById('runBtn');
@@ -121,14 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = `/levels/2`;
     });
 
-    hintBtn.addEventListener('click', () => {
-      input.placeholder = 'cout<<"Hello, C++ World!";';
-      hintBtn.disabled = true;
-      hintBtn.innerText = 'Подсказка активирана';
-    });
   }
 
-  // === LEVEL 2 ===
+  // Ниво 2
   function bindLevel2(level) {
     const input1 = document.getElementById('codeInput1');
     const input2 = document.getElementById('codeInput2');
@@ -170,11 +164,5 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = `/levels/3`;
     });
 
-    hintBtn.addEventListener('click', () => {
-      input1.placeholder = 'cin >> name;';
-      input2.placeholder = 'cout << "Hello, " << name << "!";';
-      hintBtn.disabled = true;
-      hintBtn.innerText = 'Подсказка активирана';
-    });
   }
 });

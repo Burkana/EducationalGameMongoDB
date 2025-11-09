@@ -80,16 +80,22 @@ body {
 
 
 .btn-register {
-    background-color: var(--blue-eclipse-medium);
+    background-color: var(--blue-eclipse-dark);
     color: white;
     border: none;
 }
 
 
 .btn-login {
+    background-color:  var(--blue-eclipse-medium);
+    color: white;
+    border: none;
+}
+
+.btn-guest {
     background-color: white;
     color: var(--blue-eclipse-darkest);
-    border: 2px solid var(--blue-eclipse-medium);
+    border: 2px solid var(--blue-eclipse-darkest);
 }
 
 .btn-custom:hover {
@@ -97,10 +103,6 @@ body {
     color: white; 
 }
 
-
-.btn-login:hover {
-    color: var(--blue-eclipse-darkest);
-}
 
 
 .d-grid .btn-custom {

@@ -23,6 +23,9 @@ body {
   background-color: white;
   color: white;
   display: flex;
+  min-height: 100vh;
+  padding-bottom: 70px;
+
 }
 
 .sidebar {
