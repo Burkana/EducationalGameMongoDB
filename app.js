@@ -48,8 +48,8 @@ const levelContent = {
           <pre class="codeLine">}</pre>
         </div>
         <button id="runBtn" class="btn btn-primary mt-3">Стартирай кода</button>
-        <div id="outputWindow" class="mt-3 border p-3 rounded"></div>
-        <div id="levelButtons" class="d-flex flex-wrap gap-2 mt-3">
+        <div id="outputWindow"></div>
+        <div id="levelButtons">
           <button id="nextLevelBtn" class="btn btn-success" style="display:none;">Следващо ниво</button>
           <button id="prevLevelBtn" class="btn btn-warning" style="display:none;">Предишно ниво</button>
           <a href="/main"><button id="menuBtn" class="btn btn-secondary">Меню</button></a>
@@ -107,8 +107,8 @@ const levelContent = {
           <input type="text" id="userInput" class="form-control" placeholder="Въведете име..." />
           <button id="sayHelloBtn" class="btn btn-success mt-2">Изведи поздрав</button>
         </div>
-        <div id="outputWindow" class="mt-3 border p-3 rounded"></div>
-        <div id="levelButtons" class="d-flex flex-wrap gap-2 mt-3">
+        <div id="outputWindow"></div>
+        <div id="levelButtons">
           <button id="nextLevelBtn" class="btn btn-success" style="display:none;">Следващо ниво</button>
           <button id="prevLevelBtn" class="btn btn-warning">Предишно ниво</button>
           <a href="/main"><button id="menuBtn" class="btn btn-secondary">Меню</button></a>
