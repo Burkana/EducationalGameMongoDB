@@ -1,0 +1,140 @@
+ :root {
+      --blue-eclipse-darkest: #0F0E47;
+      --blue-eclipse-dark:    #272757;
+      --blue-eclipse-medium:  #505081;
+      --blue-eclipse-light:   #8686AC;
+
+      --primary-color:        var(--blue-eclipse-darkest);
+      --main-bg-color:        var(--blue-eclipse-dark);
+      --hover-color:          var(--blue-eclipse-medium);
+      --active-border-color:  var(--blue-eclipse-light);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  background-color: white;
+  color: white;
+  padding-bottom: 70px;
+  transition: background .3s, color .3s;
+}
+
+h2 {
+  color: var(--blue-eclipse-darkest);
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue-eclipse-dark);
+  color: white;
+}
+
+.navbar {
+  background-color: var(--blue-eclipse-dark) !important;
+  color: white;
+}
+
+.footer {
+  background-color: var(--blue-eclipse-dark) !important;
+  text-align: center;
+  color: white;
+}
+
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--blue-eclipse-light);
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.main-content-area {
+    min-height: calc(100vh - 70px - 60px); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right h1 {
+    color: var(--blue-eclipse-darkest);
+}
+
+.btn:hover {
+    background-color: #8686AC;
+    text-decoration: none;
+    color: white;
+}
+
+
+.footer {
+    background-color: var(--blue-eclipse-dark) !important;
+    color: white;
+}
+
+
+.btn-custom {
+    display: block; 
+    width: 200px;
+    margin: 10px auto; 
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none; 
+}
+
+
+.btn-register {
+  background-color: var(--blue-eclipse-dark);
+  color: white;
+  border: none;
+}
+
+.btn-login {
+  background-color: var(--blue-eclipse-medium);
+  color: white;
+  border: none;
+}
+
+.btn-guest {
+  background-color: white;
+  color: var(--blue-eclipse-darkest);
+  border: 2px solid var(--blue-eclipse-darkest);
+}
+
+.btn-custom:hover {
+    opacity: 0.9;
+    color: white; 
+}
+
+
+.btn-login:hover {
+    color: var(--blue-eclipse-darkest);
+}
+
+
+.d-grid .btn-custom {
+    width: 100%; 
+}
