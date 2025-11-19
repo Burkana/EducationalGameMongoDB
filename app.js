@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ROUTES
 // ======================
 const authRoutes = require('./routes/authRoutes.js');
-const levelRoutes = require('./routes/levelRoutes.js/index.js');
+const levelRoutes = require('./routes/levelRoutes.js');
 
 app.use('/', authRoutes); // Handles /auth/login, /register, /
 app.use('/', levelRoutes); // Handles /main, /levels/:number
