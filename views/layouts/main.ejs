@@ -9,67 +9,92 @@
 </head>
 <body>
 
-<!-- Sidebar -->
-<div class="sidebar d-flex flex-column">
-  <div class="logo"><a class="text-logo" href="/main">CodeBusters</a></div>
-  <div class="logotwo"><a class="text-logo-two" href="/main">C<br>B</a></div>
+<div class="d-flex" id="wrapper">
 
-  <div class="menu-item active mb-2" data-id="play">
-    <img src="/icons/playicon-white.png" />
-    <span class="menu-text">Играй</span>
-  </div>
+    <div class="sidebar d-flex flex-column p-3 text-white bg-dark" id="sidebar">
+        <div class="logo mb-4">
+            <a class="text-white text-decoration-none fs-4" href="/main">
+                <span class="logo-text">CodeBusters</span>
+                <span class="logo-mini">CB</span>
+            </a>
+        </div>
 
-  <div class="menu-item mb-2" data-id="shop">
-    <img src="/icons/storeicon-white.png" />
-    <span class="menu-text">Магазин</span>
-  </div>
+        <div class="nav flex-column nav-pills mb-auto" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            
+            <button class="nav-link active d-flex align-items-center gap-2 mb-2" 
+                    id="v-pills-play-tab" 
+                    data-bs-toggle="pill" 
+                    data-bs-target="#v-pills-play" 
+                    type="button" 
+                    role="tab">
+                <img src="/icons/playicon-white.png" width="24" height="24">
+                <span class="menu-text">Играй</span>
+            </button>
 
-  <div class="menu-item mb-2" data-id="profile">
-    <img src="/icons/profileicon-white.png" />
-    <span class="menu-text">Профил</span>
-  </div>
+            <button class="nav-link d-flex align-items-center gap-2 mb-2" 
+                    id="v-pills-shop-tab" 
+                    data-bs-toggle="pill" 
+                    data-bs-target="#v-pills-shop" 
+                    type="button" 
+                    role="tab">
+                <img src="/icons/storeicon-white.png" width="24" height="24">
+                <span class="menu-text">Магазин</span>
+            </button>
 
-  <button id="menu-toggle" class="menu-toggle mt-auto" aria-label="Toggle menu"></button>
+            <button class="nav-link d-flex align-items-center gap-2 mb-2" 
+                    id="v-pills-profile-tab" 
+                    data-bs-toggle="pill" 
+                    data-bs-target="#v-pills-profile" 
+                    type="button" 
+                    role="tab">
+                <img src="/icons/profileicon-white.png" width="24" height="24">
+                <span class="menu-text">Профил</span>
+            </button>
+        </div>
+
+        <button id="sidebarToggle" class="btn btn-outline-light mt-auto">
+            ↔
+        </button>
+    </div>
+
+    <div class="content-area w-100 p-4">
+        <div class="tab-content" id="v-pills-tabContent">
+            
+            <div class="tab-pane fade show active" id="v-pills-play" role="tabpanel">
+                <div id="levels">
+                    <h2 class="mb-4">Избери ниво</h2>
+                    <div class="level-buttons d-flex flex-wrap gap-3">
+                        <% levels.forEach(level => { %>
+                            <a href="/levels/<%= level.number %>">
+                                <button class="btn btn-primary btn-lg"><%= level.number %></button>
+                            </a>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-shop" role="tabpanel">
+                <h2 class="mb-4">Магазин</h2>
+                <div class="alert alert-info d-inline-block">
+                    Монети: <span class="coinBalance fw-bold">0</span>
+                </div>
+                <p class="mt-3">Текущи артикули...</p>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel">
+                <h2 class="mb-4">Профил</h2>
+                <div class="alert alert-info d-inline-block">
+                    Монети: <span class="coinBalance fw-bold">0</span>
+                </div>
+                <p class="mt-3">Настройки на профила.</p>
+                <div id="profile"></div>
+                <a href="/"><button id="logoutBtn" class="btn btn-danger mt-3">Изход</button></a>
+            </div>
+
+        </div>
+    </div>
 </div>
 
-<!-- Main Content -->
-<div class="content-area">
-  <!-- Играй -->
-  <div class="tab-content active" data-id="play">
-    <div id="levels" class="screen">
-      <h2>Избери ниво</h2>
-      <div class="level-buttons d-flex flex-wrap gap-3">
-        <% levels.forEach(level => { %>
-          <a href="/levels/<%= level.number %>">
-            <button class="btn btn-primary"><%= level.number %></button>
-          </a>
-        <% }) %>
-      </div>
-    </div>
-  </div>
-
-  <!-- Магазин -->
-  <div class="tab-content" data-id="shop">
-    <h2>Магазин</h2>
-    <div id="coinBalanceWrapper">
-      <p>Монети: <span class="coinBalance">0</span></p>
-    </div>
-    <p>Текущи артикули:</p>
-  </div>
-
-  <!-- Профил -->
-  <div class="tab-content" data-id="profile">
-    <h2>Профил</h2>
-    <div id="coinBalanceWrapper">
-      <p>Монети: <span class="coinBalance">0</span></p>
-    </div>
-    <p>Информация за потребителя и настройки.</p>
-    <div id="profile"></div>
-    <a href="/"><button id="logoutBtn" class="btn">Изход</button></a>
-  </div>
-</div>
-
-<!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/js/scriptmainmenu.js"></script>
 </body>
