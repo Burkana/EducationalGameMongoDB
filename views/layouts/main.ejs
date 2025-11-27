@@ -50,7 +50,19 @@
                 <img src="/icons/profileicon-white.png" width="24" height="24">
                 <span class="menu-text">Профил</span>
             </button>
-        </div>
+
+            <% if (typeof user !== 'undefined' && user.isAdmin) { %>
+            <button class="nav-link d-flex align-items-center gap-2 mb-2" 
+                    id="v-pills-admin-tab" 
+                    data-bs-toggle="pill" 
+                    data-bs-target="#v-pills-admin" 
+                    type="button" 
+                    role="tab">
+                <img src="/icons/adminicon-white.png" width="24" height="24" alt="Admin"> 
+                <span class="menu-text">Админ</span>
+            </button>
+            <% } %>
+            </div>
 
         <button id="sidebarToggle" class="btn btn-outline-light mt-auto">
             ↔
@@ -91,7 +103,17 @@
                 <a href="/"><button id="logoutBtn" class="btn btn-danger mt-3">Изход</button></a>
             </div>
 
-        </div>
+            <% if (typeof user !== 'undefined' && user.isAdmin) { %>
+            <div class="tab-pane fade" id="v-pills-admin" role="tabpanel">
+                <h2 class="mb-4">Административен Панел</h2>
+                <div class="card p-4">
+                    <h4>Управление на потребители</h4>
+                    <p>Тук можете да добавяте нива или да управлявате потребители.</p>
+                    <button class="btn btn-warning">Редактирай нива</button>
+                </div>
+            </div>
+            <% } %>
+            </div>
     </div>
 </div>
 
